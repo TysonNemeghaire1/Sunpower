@@ -1,0 +1,30 @@
+$breakpoints: (
+        sm: 640px,
+        md: 768px,
+        lg: 1024px,
+        xl: 1280px,
+);
+
+@mixin sm-screen-and-higher {
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin md-screen-and-higher {
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin lg-screen-and-higher {
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin xl-screen-and-higher {
+  @media screen and (min-width: map-get($breakpoints, xl)) {
+    @content;
+  }
+}
