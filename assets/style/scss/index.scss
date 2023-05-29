@@ -1,5 +1,41 @@
-@import "variables";
+@import "_variables";
+@import "_placeholders";
 
 body {
-  background: $red;
+  background: $primary;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+
+  > header {
+    margin-top: 32px;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    background: $tertiary;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+     ul {
+       list-style: none;
+       margin-right: 32px;
+      @extend %flex-center;
+       gap: 32px;
+    }
+  }
+}
+
+#logo {
+  margin-left: 32px;
+  font-size: xx-large;
+  color: #004643;
+  @extend %flex-center;
+  img {
+    height: 80px;
+  }
+}
+
+.carret-icon {
+  height: 10px;
 }

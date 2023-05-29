@@ -1,2 +1,33 @@
+body > header ul, #logo {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 body {
-  background: blue; }
+  background: #004643;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0; }
+  body > header {
+    margin-top: 32px;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    background: #FFFFFE;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    body > header ul {
+      list-style: none;
+      margin-right: 32px;
+      gap: 32px; }
+
+#logo {
+  margin-left: 32px;
+  font-size: xx-large;
+  color: #004643; }
+  #logo img {
+    height: 80px; }
+
+.carret-icon {
+  height: 10px; }
