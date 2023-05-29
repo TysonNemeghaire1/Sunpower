@@ -1,0 +1,17 @@
+.article__content {
+  display: flex;
+  justify-content: space-between;
+
+
+  &--text {
+    width: 53%;
+    overflow: hidden;
+  }
+
+  &--img {
+    border: 1px solid white;
+    height: 150px;
+    width: 43%;
+  }
+}
+
