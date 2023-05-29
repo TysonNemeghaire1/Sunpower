@@ -1,0 +1,10 @@
+.article__content {
+  display: flex;
+  justify-content: space-between; }
+  .article__content--text {
+    width: 53%;
+    overflow: hidden; }
+  .article__content--img {
+    border: 1px solid white;
+    height: 150px;
+    width: 43%; }
