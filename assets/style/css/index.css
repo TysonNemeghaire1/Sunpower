@@ -1,33 +1,51 @@
-body > header ul, #logo {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap");
 body {
   background: #004643;
-  min-height: 100vh;
-  width: 100%;
-  padding: 0; }
-  body > header {
-    margin-top: 32px;
-    padding: 0;
-    width: 100%;
-    height: 100px;
-    background: #FFFFFE;
+  font-family: 'Titillium Web', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+
+header {
+  height: 64px;
+  margin-top: 16px;
+  background: #FFFFFE;
+  color: #004643; }
+
+#header-container {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  #header-container ul {
+    font-size: smaller;
     display: flex;
     align-items: center;
-    justify-content: space-between; }
-    body > header ul {
-      list-style: none;
-      margin-right: 32px;
-      gap: 32px; }
+    gap: 8px;
+    list-style: none; }
 
 #logo {
-  margin-left: 32px;
-  font-size: xx-large;
-  color: #004643; }
+  display: flex;
+  align-items: center; }
   #logo img {
-    height: 80px; }
+    height: 45px; }
+  #logo p {
+    padding-top: 5px;
+    font-size: larger; }
 
 .carret-icon {
   height: 10px; }
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  gap: 2px; }
+
+main {
+  flex: 1; }
+
+footer {
+  height: 100px;
+  margin-bottom: 16px;
+  background: #FFFFFE; }
