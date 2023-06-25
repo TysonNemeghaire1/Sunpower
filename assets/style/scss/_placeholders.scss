@@ -7,5 +7,5 @@
 
 %container {
   margin: auto;
-  width: 90%;
+  width: clamp(0px, 90%, 1140px);
 }

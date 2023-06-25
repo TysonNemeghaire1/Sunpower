@@ -18,19 +18,24 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+
 article {
   @extend %container;
 }
 
-h2 {
-  display: block;
-  flex: 1;
-  line-height: 40px;
-  background-color: $secondary;
-  color: $primary;
-  padding: 16px 16px 16px 16px;
-  font-size: x-large;
+.title-container {
+  margin-top: 16px;
+  background: $secondary;
+  padding: 16px;
+  h2 {
+    @extend %container;
+    line-height: 40px;
+    color: $primary;
+    font-size: x-large;
+  }
 }
+
+
 
 h3 {
   color: $tertiary;
@@ -44,6 +49,7 @@ p {
 a {
   text-decoration: none;
   color: $primary;
+
   &:hover {
     color: lighten($primary, 25);
     text-decoration: underline;
@@ -57,6 +63,11 @@ a {
   border-radius: 10px;
   font-size: 1em;
   font-weight: bold;
+  transition: padding 500ms;
+
+  &:hover {
+    padding: 15px 35px;
+  }
 
   &__yellow {
     background-color: $highlight;
@@ -71,11 +82,13 @@ header {
   background: $tertiary;
   color: $primary;
 }
+
 #header-container {
   @extend %container;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   ul {
     font-size: smaller;
     display: flex;
@@ -84,25 +97,31 @@ header {
     list-style: none;
   }
 }
+
 #logo {
   display: flex;
   align-items: center;
+
   img {
     height: 45px;
   }
+
   h1 {
     font-family: Titillium-extrabold, sans-serif;
     font-size: x-large;
   }
 }
+
 .carret-icon {
   height: 10px;
 }
+
 .dropdown-button {
   display: flex;
   align-items: center;
   gap: 2px;
 }
+
 //endregion
 
 main {
@@ -116,19 +135,22 @@ footer {
   margin-bottom: 16px;
   background: $tertiary;
 }
+
 #footer-container {
   @extend %container;
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-rows: repeat(auto-fit, minmax(100px,1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
   //grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
-#reseau-container {
+
+#social-container {
   p {
     color: $primary;
     font-size: large;
   }
+
   div {
     display: flex;
     gap: 8px;
@@ -138,25 +160,42 @@ footer {
     }
   }
 }
+
 #partenaires-container {
   p {
     font-size: large;
   }
- // justify-self: end;
+
+  // justify-self: end;
 }
-#liens-container {
+
+#links-container {
   height: 60px;
+
   ul {
     list-style: none;
     padding: 0;
   }
 }
+
 address {
   display: flex;
   gap: 16px;
+
   p {
     color: $primary;
   }
+
   //justify-self: end;
 }
+
+@media screen and (min-width: map-get($breakpoints, md)) {
+  #footer-container {
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  }
+  #partenaires-container, address {
+    justify-self: end;
+  }
+}
+
 //endregion

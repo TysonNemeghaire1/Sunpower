@@ -1,6 +1,6 @@
-article, #header-container, #footer-container {
+article, .title-container h2, #header-container, #footer-container {
   margin: auto;
-  width: 90%; }
+  width: clamp(0px, 90%, 1140px); }
 
 @font-face {
   font-family: Titillium;
@@ -17,14 +17,14 @@ body {
   flex-direction: column;
   height: 100vh; }
 
-h2 {
-  display: block;
-  flex: 1;
-  line-height: 40px;
-  background-color: #ABD1C6;
-  color: #004643;
-  padding: 16px 16px 16px 16px;
-  font-size: x-large; }
+.title-container {
+  margin-top: 16px;
+  background: #ABD1C6;
+  padding: 16px; }
+  .title-container h2 {
+    line-height: 40px;
+    color: #004643;
+    font-size: x-large; }
 
 h3 {
   color: #FFFFFE;
@@ -46,7 +46,10 @@ a {
   width: fit-content;
   border-radius: 10px;
   font-size: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  transition: padding 500ms; }
+  .button:hover {
+    padding: 15px 35px; }
   .button__yellow {
     background-color: #F9BC60;
     color: #004643; }
@@ -100,22 +103,22 @@ footer {
   align-items: center;
   grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)); }
 
-#reseau-container p {
+#social-container p {
   color: #004643;
   font-size: large; }
 
-#reseau-container div {
+#social-container div {
   display: flex;
   gap: 8px; }
-  #reseau-container div img {
+  #social-container div img {
     width: 60px; }
 
 #partenaires-container p {
   font-size: large; }
 
-#liens-container {
+#links-container {
   height: 60px; }
-  #liens-container ul {
+  #links-container ul {
     list-style: none;
     padding: 0; }
 
@@ -124,3 +127,9 @@ address {
   gap: 16px; }
   address p {
     color: #004643; }
+
+@media screen and (min-width: 768px) {
+  #footer-container {
+    grid-template: repeat(2, 1fr)/repeat(2, 1fr); }
+  #partenaires-container, address {
+    justify-self: end; } }
