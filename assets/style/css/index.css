@@ -12,7 +12,7 @@ article, #header-container, #footer-container {
 
 body {
   background: #004643;
-  font-family: Titillium,  sans-serif;
+  font-family: Titillium, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh; }
@@ -20,11 +20,11 @@ body {
 h2 {
   display: block;
   flex: 1;
-  line-height: 80px;
+  line-height: 40px;
   background-color: #ABD1C6;
   color: #004643;
-  padding-left: 20px;
-  font-size: 1.75em; }
+  padding: 16px 16px 16px 16px;
+  font-size: x-large; }
 
 h3 {
   color: #FFFFFE;
@@ -32,6 +32,13 @@ h3 {
 
 p {
   color: #ABD1C6; }
+
+a {
+  text-decoration: none;
+  color: #004643; }
+  a:hover {
+    color: #00c6bd;
+    text-decoration: underline; }
 
 .button {
   padding: 10px 30px;
@@ -45,8 +52,8 @@ p {
     color: #004643; }
 
 header {
-  height: 64px;
   margin-top: 16px;
+  height: 64px;
   background: #FFFFFE;
   color: #004643; }
 
@@ -66,9 +73,9 @@ header {
   align-items: center; }
   #logo img {
     height: 45px; }
-  #logo p {
+  #logo h1 {
     font-family: Titillium-extrabold, sans-serif;
-    font-size: larger; }
+    font-size: x-large; }
 
 .carret-icon {
   height: 10px; }
@@ -79,9 +86,41 @@ header {
   gap: 2px; }
 
 main {
+  background: #004643;
   flex: 1; }
 
 footer {
-  height: 100px;
+  height: auto;
   margin-bottom: 16px;
   background: #FFFFFE; }
+
+#footer-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)); }
+
+#reseau-container p {
+  color: #004643;
+  font-size: large; }
+
+#reseau-container div {
+  display: flex;
+  gap: 8px; }
+  #reseau-container div img {
+    width: 60px; }
+
+#partenaires-container p {
+  font-size: large; }
+
+#liens-container {
+  height: 60px; }
+  #liens-container ul {
+    list-style: none;
+    padding: 0; }
+
+address {
+  display: flex;
+  gap: 16px; }
+  address p {
+    color: #004643; }

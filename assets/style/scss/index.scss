@@ -11,39 +11,46 @@
   src: url("../../fonts/Titillium_Web/TitilliumWeb-Bold.ttf");
 }
 
-
-
 body {
   background: $primary;
-  font-family: Titillium,  sans-serif;
+  font-family: Titillium, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-article{
+article {
   @extend %container;
 }
 
-h2{
+h2 {
   display: block;
   flex: 1;
-  line-height: 80px;
+  line-height: 40px;
   background-color: $secondary;
   color: $primary;
-  padding-left: 20px;
-  font-size: 1.75em;
+  padding: 16px 16px 16px 16px;
+  font-size: x-large;
 }
 
-h3{
+h3 {
   color: $tertiary;
   font-size: 1.75em;
 }
 
-p{
+p {
   color: $secondary;
 }
 
-.button{
+a {
+  text-decoration: none;
+  color: $primary;
+  &:hover {
+    color: lighten($primary, 25);
+    text-decoration: underline;
+  }
+}
+
+.button {
   padding: 10px 30px;
   display: flex;
   width: fit-content;
@@ -51,17 +58,16 @@ p{
   font-size: 1em;
   font-weight: bold;
 
-  &__yellow{
+  &__yellow {
     background-color: $highlight;
     color: $primary;
   }
-
 }
 
 //region HEADER
 header {
-  height: 64px;
   margin-top: 16px;
+  height: 64px;
   background: $tertiary;
   color: $primary;
 }
@@ -70,7 +76,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   ul {
     font-size: smaller;
     display: flex;
@@ -85,9 +90,9 @@ header {
   img {
     height: 45px;
   }
-  p {
+  h1 {
     font-family: Titillium-extrabold, sans-serif;
-    font-size: larger;
+    font-size: x-large;
   }
 }
 .carret-icon {
@@ -101,16 +106,57 @@ header {
 //endregion
 
 main {
+  background: $primary;
   flex: 1;
 }
 
 //region FOOTER
 footer {
-  height: 100px;
+  height: auto;
   margin-bottom: 16px;
   background: $tertiary;
 }
 #footer-container {
- @extend %container;
+  @extend %container;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(auto-fit, minmax(100px,1fr));
+  //grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+#reseau-container {
+  p {
+    color: $primary;
+    font-size: large;
+  }
+  div {
+    display: flex;
+    gap: 8px;
+
+    img {
+      width: 60px;
+    }
+  }
+}
+#partenaires-container {
+  p {
+    font-size: large;
+  }
+ // justify-self: end;
+}
+#liens-container {
+  height: 60px;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+address {
+  display: flex;
+  gap: 16px;
+  p {
+    color: $primary;
+  }
+  //justify-self: end;
 }
 //endregion
