@@ -27,6 +27,7 @@ article {
   margin-top: 16px;
   background: $secondary;
   padding: 16px;
+
   h2 {
     @extend %container;
     line-height: 40px;
@@ -34,8 +35,6 @@ article {
     font-size: x-large;
   }
 }
-
-
 
 h3 {
   color: $tertiary;
@@ -129,6 +128,63 @@ main {
   flex: 1;
 }
 
+//region CONTACT FORM
+
+#form-container {
+  @extend %container;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: $tertiary;
+  border-radius: 15px;
+  margin: 32px 0;
+  padding: 32px 32px;
+
+  input,
+  textarea {
+    background: #d9d9d9;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+  input[type=submit] {
+    background: $primary;
+    color: $highlight;
+    font-weight: 900;
+    padding: 16px;
+    min-width: fit-content;
+    width: 50%;
+    align-self: center;
+  }
+
+  textarea {
+    height: 200px;
+    resize: none;
+  }
+}
+
+#contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  input {
+    flex: 1;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+//endregion
+
 //region FOOTER
 footer {
   height: auto;
@@ -165,8 +221,6 @@ footer {
   p {
     font-size: large;
   }
-
-  // justify-self: end;
 }
 
 #links-container {
@@ -185,17 +239,19 @@ address {
   p {
     color: $primary;
   }
-
-  //justify-self: end;
 }
+
+//endregion
 
 @media screen and (min-width: map-get($breakpoints, md)) {
   #footer-container {
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   }
-  #partenaires-container, address {
+  #partenaires-container,
+  address {
     justify-self: end;
   }
+  #contact-container {
+    flex-direction: row;
+  }
 }
-
-//endregion

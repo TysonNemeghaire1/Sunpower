@@ -1,4 +1,4 @@
-article, .title-container h2, #header-container, #footer-container {
+article, .title-container h2, #header-container, #form-container, #footer-container {
   margin: auto;
   width: clamp(0px, 90%, 1140px); }
 
@@ -92,6 +92,44 @@ main {
   background: #004643;
   flex: 1; }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #FFFFFE;
+  border-radius: 15px;
+  margin: 32px 0;
+  padding: 32px 32px; }
+  form input,
+  form textarea {
+    background: #d9d9d9;
+    border: none;
+    border-radius: 5px;
+    padding: 8px; }
+  form input[type=submit] {
+    background: #004643;
+    color: #F9BC60;
+    font-weight: 900;
+    padding: 16px;
+    min-width: fit-content;
+    width: 50%;
+    align-self: center; }
+  form textarea {
+    height: 200px;
+    resize: none; }
+
+#contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; }
+  #contact-container input {
+    flex: 1; }
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; }
+
 footer {
   height: auto;
   margin-bottom: 16px;
@@ -131,5 +169,8 @@ address {
 @media screen and (min-width: 768px) {
   #footer-container {
     grid-template: repeat(2, 1fr)/repeat(2, 1fr); }
-  #partenaires-container, address {
-    justify-self: end; } }
+  #partenaires-container,
+  address {
+    justify-self: end; }
+  #contact-container {
+    flex-direction: row; } }
