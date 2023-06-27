@@ -122,13 +122,12 @@ form {
   display: flex;
   flex-direction: column;
   gap: 16px; }
-  #contact-container input {
-    flex: 1; }
 
 .input-container {
   display: flex;
   flex-direction: column;
-  gap: 8px; }
+  gap: 8px;
+  flex: 1; }
 
 footer {
   height: auto;
